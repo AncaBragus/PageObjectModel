@@ -2,17 +2,18 @@ package tests;
 
 import org.testng.annotations.Test;
 import pageObject.MenuPage;
+import pageObject.LoginPage;
 import utils.BaseTest;
-import org.openqa.selenium.WebDriver;
+import static org.testng.Assert.assertTrue;
 
-public class LoginTest {
-	 @Test
+public class LoginTest extends BaseTest {
+	 @Test(description = "positiveScenrio")
 	 public void validLoginTest() {
 		 MenuPage menu = new  MenuPage(driver);
 		 menu.navigateTo(menu.loginLink);
 		 LoginPage login = new LoginPage(driver);
-		 login.logInApp("TestUser","12345@67890");
-		 assertTrue(login.loginMsgIsDisplayed(login.loginSuccessMsg));
+		 login.loginInApp("TestUser","12345@67890");
+		 assertTrue(login.loginMsgIsDisplayed(login.loginSuccessMessage));
 	 }
 	 
 	 @Test(description = "negativeScenrio") /*(groups = "Smoke") */
@@ -20,7 +21,7 @@ public class LoginTest {
 		 MenuPage menu = new  MenuPage(driver);
 		 menu.navigateTo(menu.loginLink);
 		 LoginPage login = new LoginPage(driver);
-		 login.logInApp("TestUserinvalid","12345@67890");
-		 assertTrue(login.loginMsgIsDisplayed(login.loginErrorMsg)); 	 
+		 login.loginInApp("TestUserinvalid","12345@67890");
+		 assertTrue(login.loginMsgIsDisplayed(login.loginErrorMessage)); 	 
 	 }
 }
