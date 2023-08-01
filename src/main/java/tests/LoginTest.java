@@ -21,7 +21,7 @@ public class LoginTest extends BaseTest {
 		 MenuPage menu = new  MenuPage(driver);
 		 menu.navigateTo(menu.loginLink);
 		 LoginPage login = new LoginPage(driver);
-		 login.loginInApp("TestUserinvalid","12345@67890");
+		 login.loginInApp("TestUser","@67890");
 		 assertTrue(login.loginMsgIsDisplayed(login.loginErrorMessage)); 	 
 	 }
 }

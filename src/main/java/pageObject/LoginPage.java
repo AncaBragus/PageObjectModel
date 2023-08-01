@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import utils.BaseTest;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends BaseTest{
+public class LoginPage {
 	public WebDriver driver;
 	public LoginPage(WebDriver driver) {
 	this.driver =driver;
@@ -15,15 +15,22 @@ public class LoginPage extends BaseTest{
 	public By submit_button = By.cssSelector("input[class='submit_button']");
 	public By loginSuccessMessage = By.cssSelector("div[class*='sc_infobox_style_success']");
 	public By loginErrorMessage = By.cssSelector("div[class*='sc_infobox_style_error']");
+	public By closeloginPopup = By.cssSelector("a[class='popup_close']");
 	
 	// metode
 	public void loginInApp(String user, String pass) {
+		driver.findElement(usernameField).clear();
 		driver.findElement(usernameField).sendKeys(user);
+		driver.findElement(passwordField).clear();
 		driver.findElement(passwordField).sendKeys(pass);
 		driver.findElement(submit_button).click();
 	}
 	
-	public boolean  loginMsgIsDisplayed (By mess){
-		return true;
-			}
+	public void closePopUp() {
+		driver.findElement(closeloginPopup).click();
+	}
+	
+	public boolean  loginMsgIsDisplayed (By locator) {
+		return driver.findElement(locator).isDisplayed();
+	}
 }
