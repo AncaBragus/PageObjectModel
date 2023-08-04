@@ -14,6 +14,7 @@ public class MenuPage {
 	//driver.findElement(By.cssSelector ("...."))
 	public By contactLink=By.linkText("CONTACTS");
 	public By loginLink=By.cssSelector("li[class='menu_user_login']");
+	public By shopLink=By.linkText("BOOKS");
 	
 public  void navigateTo	(By locator) {
 	driver.findElement(locator).click();
