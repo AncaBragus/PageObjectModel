@@ -13,7 +13,7 @@ import pageObject.ShopPage;
 
 import utils.BaseTest;
 
-public class dropdownTest extends BaseTest	 {
+public class DropdownTest extends BaseTest	 {
 	@Test(priority=1)
 	public void selectByValue() {
 		

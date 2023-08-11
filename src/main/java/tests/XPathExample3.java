@@ -29,5 +29,6 @@ public class XPathExample3 extends BaseTest{
 		//curs21
 		//(//h2[@class='woocommerce-loop-product__title'])[last()]  -->ultimul
 		//(//h2[@class='woocommerce-loop-product__title'])[last()-1]  -->penultimul
+		//h2[@class='woocommerce-loop-product__title'])[position()=13]  -- asemanator cu index
 	}
 }
