@@ -17,11 +17,26 @@ public class LoginTest extends BaseTest {
 	 }
 	 
 	 @Test(description = "negativeScenrio") /*(groups = "Smoke") */
-	 public  void invalidLoginTest() {
-		 MenuPage menu = new  MenuPage(driver);
-		 menu.navigateTo(menu.loginLink);
-		 LoginPage login = new LoginPage(driver);
-		 login.loginInApp("TestUser","@67890");
-		 assertTrue(login.loginMsgIsDisplayed(login.loginErrorMessage)); 	 
+	 public void invalidUsernameLoginTest() {
+			
+			MenuPage menu =  new MenuPage(driver);
+			menu.navigateTo(menu.loginLink);
+			LoginPage login = new LoginPage(driver);
+			login.loginInApp("TestUser123", "12345@67890");
+			assertTrue(login.loginMsgIsDisplayed(login.loginErrorMessage));
+			login.closePopUp();	 
 	 }
+	 @Test(description = "negativeScenario")
+		public void invalidPasswordLoginTest() {
+			
+			MenuPage menu =  new MenuPage(driver);
+			menu.navigateTo(menu.loginLink);
+			LoginPage login = new LoginPage(driver);
+			login.loginInApp("TestUser", "@67890");
+			
+			assertTrue(login.loginMsgIsDisplayed(login.loginErrorMessage));
+			
+			login.closePopUp();
+			
+		}
 }
