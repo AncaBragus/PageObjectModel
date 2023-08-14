@@ -16,7 +16,7 @@ public class BaseTest {
 		
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.manage().window().maximize();//maximizeaza fereastra browserului
+		//driver.manage().window().maximize();//maximizeaza fereastra browserului
 		driver.get("https://keybooks.ro/");
 		
 		
@@ -24,7 +24,7 @@ public class BaseTest {
 	
 	@AfterClass
 	public void teardown() throws InterruptedException {
-		Thread.sleep(4000);//bad practice
+		Thread.sleep(5000);//bad practice
 		
 		driver.quit();//inchide tot browserul cu toate taburile
 	}
