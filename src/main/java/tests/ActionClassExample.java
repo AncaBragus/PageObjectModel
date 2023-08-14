@@ -2,6 +2,7 @@ package tests;
 
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pageObject.MenuPage;
@@ -22,7 +23,7 @@ public class ActionClassExample extends BaseTest{
 		menu.hoverElement(menu.blogLink);
 		menu.hoverElement(menu.blogSubMenuMasonry);
 		Thread.sleep(3000);
-		menu.navigateTo(menu.blogSubMenuMasonry);
+		menu.navigateTo(menu.blogSubMenuMasonrysubMenu);
 	}
 	
 	@Test
@@ -45,7 +46,10 @@ public class ActionClassExample extends BaseTest{
 		moveToElement(element)
 		.sendKeys(element,"Name")
 		.sendKeys(Keys.TAB,"email@email.ro")
+		.sendKeys(Keys.TAB, "My Subject")
+		.sendKeys(Keys.TAB, "My message ")
 		.sendKeys(Keys.TAB,Keys.ENTER)
+		//.sendKeys().clickAndHold().moveToElement(element).release()
 		.perform();
 	}
 }

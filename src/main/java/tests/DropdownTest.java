@@ -51,8 +51,9 @@ public class DropdownTest extends BaseTest	 {
 		MenuPage menu =  new MenuPage(driver);
 		menu.navigateTo(menu.shopLink);
 		//incarc in mem un webelem  pe sessiune curenta session id
+		Thread.sleep(2000);	
 		WebElement dropdown =  driver.findElement(By.xpath("//select[@class='orderby']"));	
-		Select select =  new Select(dropdown);//primeste web element sis e foloseste de el
+		Select select =  new Select(dropdown);//primeste web element si se foloseste de el
 		select.selectByIndex(2);// se foloseste de dropdown pt a selecta o optiune
 		//cand face selectie din dropdown, browserul face refresh la pagina
 		// cand face refresh, selenium citeste alt session id

@@ -19,12 +19,13 @@ public class ShopPage {
 	public  void dragAndDrop(By locator,int x, int y) {
 		WebElement element = driver.findElement(locator);
 		Actions action = new Actions(driver);
-		action.dragAndDropBy (element, x, y).perform();
+		//action.dragAndDropBy (element, x, y).perform();
+		action.moveToElement(element).clickAndHold(element).moveByOffset(x, y).release().perform();
 	}
 	
 	public void filterByValue(String value) {
 		WebElement element =driver.findElement(orderDropDown);
-		Select dropdown= new Select(null);
+		Select dropdown= new Select(element);
 		dropdown.selectByValue(value);
 	}
 	

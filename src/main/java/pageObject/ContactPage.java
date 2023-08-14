@@ -9,5 +9,5 @@ public class ContactPage {
 		this.driver =driver;
 	    }
 	
-public By nameField = By.id("log");
+public By nameField = By.name("your-name");
 }
