@@ -11,7 +11,7 @@ import pageObject.MenuPage;
 import pageObject.BlogClassicPage;
 import utils.BaseTest;
 
-public class PostCommentOnBlog extends BaseTest  {
+public class BlogClassicPostComment extends BaseTest  {
 
 	@Test
 	public void postcommentTest() throws InterruptedException {
