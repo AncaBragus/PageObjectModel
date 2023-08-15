@@ -17,6 +17,7 @@ public class MenuPage {
 	public By loginLink=By.cssSelector("li[class='menu_user_login']");
 	public By shopLink=By.linkText("BOOKS");
 	public By blogLink=By.linkText("BLOG");
+	public By blogSubMenuClassic=By.xpath("//ul[@id='menu_main']/li/ul/li/a[contains(text(), 'Classic')]");
 	public By aboutLink=By.linkText("ABOUT");
 	public By singleAuthorLink=By.linkText("SINGLE AUTHOR");
 	public By contactLink=By.linkText("CONTACTS");
