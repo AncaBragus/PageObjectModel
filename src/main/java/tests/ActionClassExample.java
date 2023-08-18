@@ -3,6 +3,7 @@ package tests;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pageObject.MenuPage;
@@ -51,5 +52,22 @@ public class ActionClassExample extends BaseTest{
 		.sendKeys(Keys.TAB,Keys.ENTER)
 		//.sendKeys().clickAndHold().moveToElement(element).release()
 		.perform();
+	}
+	
+	@Test
+	public void copyPasteExample() {
+		WebElement loginLonk =driver.findElement(By.linkText("Login"));
+		loginLonk.click();
+		WebElement username =driver.findElement(By.id("log"));
+		WebElement password =driver.findElement(By.id("password"));
+		Actions action = new Actions(driver);
+		//username.click();
+		action.click(username).perform(); //sunt identice
+		//username.sendKeys("TestUser");
+		action.sendKeys(username,"TestUser").perform();
+		
+		Keys ctrl=Platform.getCurrent().is(Platform.MAC)? Keys.COMMAND : Keys.CONTROL;
+		//selectez textul
+		action.keyDown(Keys.CONTROL);
 	}
 }
