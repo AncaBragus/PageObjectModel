@@ -1,14 +1,27 @@
 package tests;
 import org.testng.annotations.Test;
+import static org.testng.Assert.assertTrue;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import pageObject.MenuPage;
 import utils.BaseTest;
 import utils.DataProviderClass;
+
 public class DataProviderBooksSearchTest extends BaseTest{
 	
 	@Test(dataProviderClass=DataProviderClass.class	, dataProvider="bookNameDataProvider")
-	public void searchBooks() {
+public void searchBooksTest(String title, String picture) throws InterruptedException {
 		
-	//	button[class*='search_submit']
+		MenuPage menu =  new MenuPage(driver);
+		menu.search(title);
+		
+		Thread.sleep(2000);
+		WebElement poza = driver.findElement
+				(By.cssSelector("div[data-image*='"+picture+"']"));
+		
+		assertTrue(poza.isDisplayed());
 	}
 
 }

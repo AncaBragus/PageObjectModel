@@ -23,6 +23,17 @@ public class MenuPage {
 	public By contactLink=By.linkText("CONTACTS");
 	public By blogSubMenuMasonry =By.xpath("//a[contains(text(), 'Masonry')]");
 	public By blogSubMenuMasonrysubMenu = By.xpath("//a[contains(text(), 'Masonry 2')]");
+	public By iconSearch = By.cssSelector("button[title='Open search']");
+	public By searchField = By.cssSelector("input[class='search_field']");
+	
+public void search(String text) {
+		
+		driver.findElement(iconSearch).click();
+		driver.findElement(searchField).clear();
+		driver.findElement(searchField).sendKeys(text);
+		driver.findElement(iconSearch).click();
+
+	}	
 
 	
 public  void navigateTo(By locator) {
