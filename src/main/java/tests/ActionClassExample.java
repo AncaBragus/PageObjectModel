@@ -22,6 +22,7 @@ public class ActionClassExample extends BaseTest{
 		menu.hoverElement(menu.aboutLink);
 		Thread.sleep(3000);
 		menu.hoverElement(menu.blogLink);
+		Thread.sleep(3000);
 		menu.hoverElement(menu.blogSubMenuMasonry);
 		Thread.sleep(3000);
 		menu.navigateTo(menu.blogSubMenuMasonrysubMenu);
@@ -55,7 +56,7 @@ public class ActionClassExample extends BaseTest{
 	}
 	
 	@Test
-	public void copyPasteExample() {
+	public void copyPasteExample() throws InterruptedException{
 		WebElement loginLonk =driver.findElement(By.linkText("Login"));
 		loginLonk.click();
 		WebElement username =driver.findElement(By.id("log"));
@@ -66,8 +67,36 @@ public class ActionClassExample extends BaseTest{
 		//username.sendKeys("TestUser");
 		action.sendKeys(username,"TestUser").perform();
 		
-		Keys ctrl=Platform.getCurrent().is(Platform.MAC)? Keys.COMMAND : Keys.CONTROL;
-		//selectez textul
-		action.keyDown(Keys.CONTROL);
+		Keys crtlKey =Platform.getCurrent().is(Platform.MAC)? Keys.COMMAND : Keys.CONTROL;
+		
+		System.out.println("Before copy paste :" +password.getAttribute("value"));
+
+		//selectez textul pe care vreau sa il copiez
+		
+		//selectie cu CTRL+ A
+		//action.keyDown(crtlKey).sendKeys("a").keyUp(crtlKey).perform();
+		
+		//selectie cu doubleCLick()
+		//action.doubleClick().keyDown(crtlKey).sendKeys("c").keyUp(crtlKey).perform();
+		
+		//selectie din sageti
+		action
+			.keyDown(Keys.SHIFT)
+			.sendKeys(Keys.ARROW_LEFT)
+			.sendKeys(Keys.ARROW_UP)
+			.keyUp(Keys.SHIFT)
+			.keyDown(crtlKey)
+			.sendKeys("c")
+			.keyUp(crtlKey)
+			.perform();
+		
+		action.click(password).perform();
+		action.keyDown(crtlKey).sendKeys("v").keyUp(crtlKey).perform();
+
+		
+		System.out.println("AFter copy paste :" +password.getAttribute("value"));
+		
+		Thread.sleep(3000);
+			
 	}
 }
