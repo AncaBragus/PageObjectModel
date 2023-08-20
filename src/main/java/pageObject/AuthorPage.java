@@ -1,7 +1,12 @@
 package pageObject;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AuthorPage {
 	public WebDriver driver;
@@ -16,6 +21,12 @@ public class AuthorPage {
 	
 	public  void navigateToSkills() {
 		driver.findElement(skillsBar).click();
+	}
+	
+	public String waitAndGetSkillTexT(By locator, String procent) {
+	WebDriverWait wait = new WebDriverWait (driver,Duration.ofSeconds(10));
+	wait.until(ExpectedConditions.textToBePresentInElementLocated(locator, procent));
+	return driver.findElement(locator).getText();
 	}
 	
 }
