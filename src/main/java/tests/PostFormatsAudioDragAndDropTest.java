@@ -20,12 +20,13 @@ public class PostFormatsAudioDragAndDropTest extends BaseTest{
 	
 	PostFormatsPage audio = new PostFormatsPage(driver);
 	audio.clickButton(audio.playButton);
-	audio.moveSlide(audio.playSlide, 200,0);
 	
 	audio.clickButton(audio.pauseButton);
+	
+	audio.moveSlide(audio.playSlide, 200,0);
+		
 	audio.moveSlide(audio.volumeSlide, -50,0);
 	
-	audio.clickButton(audio.playButton);
 	Thread.sleep(2000);
 	}
 }

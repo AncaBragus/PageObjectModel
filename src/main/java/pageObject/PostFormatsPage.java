@@ -1,5 +1,7 @@
 package pageObject;
 
+import org.openqa.selenium.Point;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,6 +29,12 @@ public class PostFormatsPage {
 		WebElement element = driver.findElement(locator);
 		Actions action = new Actions(driver);
 		//action.dragAndDropBy (element, x, y).perform();
+		Point point = element.getLocation();
+		/*int xCord = point.getX();
+		System.out.println(xCord);
+		int yCord = point.getY();
+		System.out.println(yCord);
+		*/
 		action.moveToElement(element).clickAndHold(element).moveByOffset(x, y).release().perform();
 	}
 }

@@ -16,7 +16,7 @@ public class BaseTest {
 		
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		//driver.manage().window().maximize();//maximizeaza fereastra browserului
+		driver.manage().window().maximize();//maximizeaza fereastra browserului
 		driver.get("https://keybooks.ro/");
 		
 		
