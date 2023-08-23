@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeClass;
 public class BaseTest {
 	
 	public WebDriver driver;
+	public BasePage app;
 	
 	@BeforeClass
 	public void setup() {
@@ -19,7 +20,7 @@ public class BaseTest {
 		driver.manage().window().maximize();//maximizeaza fereastra browserului
 		driver.get("https://keybooks.ro/");
 		
-		
+		app = new BasePage();
 	}
 	
 	@AfterClass
