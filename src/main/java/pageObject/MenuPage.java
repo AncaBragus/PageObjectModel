@@ -15,6 +15,7 @@ public class MenuPage {
 	//locators
 	//driver.findElement(By.cssSelector ("...."))
 	public By loginLink=By.cssSelector("li[class='menu_user_login']");
+	public By homeLink=By.linkText("HOME");
 	public By shopLink=By.linkText("BOOKS");
 	public By blogLink=By.linkText("BLOG");
 	public By blogSubMenuClassic=By.xpath("//ul[@id='menu_main']/li/ul/li/a[contains(text(), 'Classic')]");
