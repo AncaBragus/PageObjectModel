@@ -5,7 +5,8 @@
      <parameter name= "pass" value="12345@67890" />
 
         <classes>
-            <class name="tests.LoginTest" ></class>
+           <!-- <class name="tests.LoginTest" ></class> -->
+            <class name="tests.CookiesLogin" ></class>
         </classes>
     </test>
 </suite>

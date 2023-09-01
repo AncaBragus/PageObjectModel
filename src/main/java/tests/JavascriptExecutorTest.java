@@ -64,6 +64,30 @@ public class JavascriptExecutorTest extends BaseTest{
 		System.out.println("Title :" + jse.executeScript("return document.title"));
 		Thread.sleep(3000);
 
+		//alternativa pentru getCurrentURL
+				System.out.println("URL :" + jse.executeScript("return document.URL"));
+				//alternativa pentru element.getText()
+				String bookTitle = jse.executeScript
+						("return document.getElementsByClassName('post_title')[0].childNodes[0].innerText").toString();
+				System.out.println("Element text :" + bookTitle);
+
+
+				jse.executeScript("document.getElementsByClassName('menu_user_login')[0].childNodes[0].click() ");
+
+				//alternativa pentru isDisplayed()
+				String isDisplayed = jse.executeScript("return document.getElementsByName('log')[0].checkVisibility() ").toString();
+				System.out.println("isDsplayed :" + isDisplayed);
+				//alternativa pentru isEnabled
+				String isDisabled = jse.executeScript("return document.getElementsByName('pwd')[0].disabled").toString();
+				System.out.println("isDisabled :" + isDisabled);
+				//alternativa pentru isSelected
+				String isSelected = jse.executeScript("return document.getElementsByName('rememberme')[0].checked").toString();
+				System.out.println("isSelected :" + isSelected);
+
+
+				Thread.sleep(4000);
+				//custom function
+				
 		jse.executeScript("window.SchimbTitlul = function(){ document.title = 'Alt titlu'};"
 				+ "window.SchimbTitlul.call()");
 
