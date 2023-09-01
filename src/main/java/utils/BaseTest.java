@@ -9,12 +9,13 @@ import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
 	
-	public WebDriver driver;
+	public static WebDriver driver;
 	public BasePage app;
 	
-	@BeforeClass
+	//@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void setup() {
-		
+		//System.setProperty("webdriver.chrome.driver", "path catre/chromedriver.exe")
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();//maximizeaza fereastra browserului

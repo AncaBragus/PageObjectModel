@@ -20,12 +20,14 @@ public class MenuPage {
 	public By blogLink=By.linkText("BLOG");
 	public By blogSubMenuClassic=By.xpath("//ul[@id='menu_main']/li/ul/li/a[contains(text(), 'Classic')]");
 	public By aboutLink=By.linkText("ABOUT");
+	public By eventsLink = By.linkText("EVENTS");
 	public By singleAuthorLink=By.linkText("SINGLE AUTHOR");
 	public By contactLink=By.linkText("CONTACTS");
 	public By blogSubMenuMasonry =By.xpath("//a[contains(text(), 'Masonry')]");
 	public By blogSubMenuMasonrysubMenu = By.xpath("//a[contains(text(), 'Masonry 2')]");
 	public By blogPostFormats = By.xpath("//li[starts-with(@id,'menu-item')]/a[contains(text(),'Post Formats')]");
-	public By iconSearch = By.cssSelector("button[title='Open search']");
+	//public By iconSearch = By.cssSelector("button[title='Open search']");
+	public By iconSearch = By.cssSelector("button[class*='search_submit']");
 	public By searchField = By.cssSelector("input[class='search_field']");
 	
 public void search(String text) {

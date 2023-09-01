@@ -14,7 +14,7 @@ import pageObject.ShopPage;
 import utils.BaseTest;
 
 public class DropdownTest extends BaseTest	 {
-	@Test(priority=1)
+	@Test(priority=1, groups = "ProductFunctionality")
 	public void selectByValue() {
 		
 		MenuPage menu =new MenuPage(driver);
@@ -28,7 +28,7 @@ public class DropdownTest extends BaseTest	 {
 		
 	}
 
-	@Test(priority=2)
+	@Test(priority = 2,  groups = "ProductFunctionality")
 	public void selectByVisibleText() {
 		MenuPage menu =new MenuPage(driver);
 		menu.navigateTo(menu.shopLink);
