@@ -16,9 +16,10 @@ public class GenericEventPage {
 	public By mapLink = By.partialLinkText("map");
 	public By iframe = By.tagName("iframe");
 	
-	public void clickMap() {
+	public void clickMap() throws InterruptedException {
 		WebElement element =  driver.findElement(iframe);
 		driver.switchTo().frame(element);
+		Thread.sleep(3000);
 		driver.findElement(mapLink).click();
 	}
 	

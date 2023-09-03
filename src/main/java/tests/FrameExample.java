@@ -15,7 +15,10 @@ public class FrameExample extends BaseTest{
 		menu.navigateTo(menu.contactLink);
 		ContactPage contacts =  new ContactPage(driver);
 		contacts.zoomMap(contacts.zoomIn);
-
+		
+		app.menu.navigateTo(app.menu.contactLink);
+		app.contact.zoomMap(app.contact.zoomIn);
+		//app.click( app.menu.contactLink)
 		Thread.sleep(3000);
 	}
 
