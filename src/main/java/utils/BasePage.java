@@ -8,6 +8,7 @@ import pageObject.GenericEventPage;
 import pageObject.LoginPage;
 import pageObject.MenuPage;
 import pageObject.ShopPage;
+import pageObject.PostFormatsPage;
 
 public class BasePage  extends SeleniumWrappers{
 		
@@ -17,5 +18,6 @@ public class BasePage  extends SeleniumWrappers{
 	public LoginPage login =  new LoginPage(driver);
 	public EventsPage events = new EventsPage(driver);
 	public GenericEventPage genericEvent = new GenericEventPage(driver);
+	public PostFormatsPage postFormats =new PostFormatsPage(driver);
 	
 }

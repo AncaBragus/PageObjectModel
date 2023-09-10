@@ -20,6 +20,8 @@ public class PostFormatsPage {
 	public By volumeButton=By.xpath("//button[@title='Mute']");
 	public By volumeSlide=By.xpath("//div[@class='mejs-horizontal-volume-total']");
 	
+	public By galleryFormat = By.xpath("//h4/a[contains(text(), 'Gallery Format')]");
+		
 	public  void clickButton(By locator) {
 		WebElement element = driver.findElement(locator);
 		Actions action = new Actions(driver);

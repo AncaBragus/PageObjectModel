@@ -16,8 +16,8 @@ public class WindowHandleExample extends BaseTest{
 	@Test
 	public void windowHandleTest() throws InterruptedException {
 
-		app.menu.navigateTo(app.menu.eventsLink);
-		app.events.clickOnEvent(app.events.festivalOfOldFilmsLink);
+		//app.menu.navigateTo(app.menu.eventsLink);
+		//app.events.clickOnEvent(app.events.festivalOfOldFilmsLink);
 
 		app.click(app.menu.eventsLink);
 		app.click(app.events.festivalOfOldFilmsLink);
